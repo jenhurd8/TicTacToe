@@ -4,7 +4,7 @@ public class Tic {
 	static Scanner sc = new Scanner(System.in);
 	static int i = 1;
 	static String xo = "";
-	static int turn = 9;
+	static int turn = 1;
 	static String arr[][][] = {
 			{
 					{
@@ -27,75 +27,118 @@ public class Tic {
 		System.out.println("");
 		System.out.println();
 	}
-	
-	static void winningMessage(){
+
+	static void winningMessage() {
 		System.out.println(xo + " WINS!!! CONGRATULATIONS!!!");
 		System.exit(1);
 	}
 
 	static void processChoice() {
-		//TODO - check if number has already been chosen
-		//TODO, add X or O..it is your turn
 		switch (i) {
 		case 1:
+			if (arr[0][0][0] == "X" || arr[0][0][0] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[0][0][0] = xo;
 			break;
 		case 2:
+			if (arr[0][0][1] == "X" || arr[0][0][1] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[0][0][1] = xo;
 			break;
 		case 3:
+			if (arr[0][0][2] == "X" || arr[0][0][2] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[0][0][2] = xo;
 			break;
 		case 4:
+			if (arr[1][0][0] == "X" || arr[1][0][0] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[1][0][0] = xo;
 			break;
 		case 5:
+			if (arr[1][0][1] == "X" || arr[1][0][1] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[1][0][1] = xo;
 			break;
 		case 6:
+			if (arr[1][0][2] == "X" || arr[1][0][2] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[1][0][2] = xo;
 			break;
 		case 7:
+			if (arr[2][0][0] == "X" || arr[2][0][0] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[2][0][0] = xo;
 			break;
 		case 8:
+			if (arr[2][0][1] == "X" || arr[2][0][1] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[2][0][1] = xo;
 			break;
 		case 9:
+			if (arr[2][0][2] == "X" || arr[2][0][2] == "O") {
+				System.out.println("**This number is already taken. Please choose again.**");
+				turn--;
+				break;
+			}
 			arr[2][0][2] = xo;
 			break;
 		}
-				
-		//top row matches
+
+		// top row matches
 		if (arr[0][0][0] == arr[0][0][1] && arr[0][0][1] == arr[0][0][2]) {
 			printGameBoard();
 			winningMessage();
-			//middle row matches
+			// middle row matches
 		} else if (arr[1][0][0] == arr[1][0][1] && arr[1][0][1] == arr[1][0][2]) {
 			printGameBoard();
 			winningMessage();
-			//bottom row matches
+			// bottom row matches
 		} else if (arr[2][0][0] == arr[2][0][1] && arr[2][0][1] == arr[2][0][2]) {
 			printGameBoard();
 			winningMessage();
-			//first row down matches
+			// first row down matches
 		} else if (arr[0][0][0] == arr[1][0][0] && arr[1][0][0] == arr[2][0][0]) {
 			printGameBoard();
 			winningMessage();
-			//second row down matches
+			// second row down matches
 		} else if (arr[0][0][1] == arr[1][0][1] && arr[1][0][1] == arr[2][0][1]) {
 			printGameBoard();
 			winningMessage();
-			//third row down matches
+			// third row down matches
 		} else if (arr[0][0][2] == arr[1][0][2] && arr[1][0][2] == arr[2][0][2]) {
 			printGameBoard();
 			winningMessage();
-			//diagonal from 1-9
-		}else if (arr[0][0][0] == arr[1][0][1] && arr[1][0][1] == arr[2][0][2]) {
+			// diagonal from 1-9
+		} else if (arr[0][0][0] == arr[1][0][1] && arr[1][0][1] == arr[2][0][2]) {
 			printGameBoard();
 			winningMessage();
-			//diagonal from 3-7
-		}else if (arr[0][0][2] == arr[1][0][1] && arr[1][0][1] == arr[2][0][0]) {
+			// diagonal from 3-7
+		} else if (arr[0][0][2] == arr[1][0][1] && arr[1][0][1] == arr[2][0][0]) {
 			printGameBoard();
 			winningMessage();
 		}
@@ -113,20 +156,24 @@ public class Tic {
 		printGameBoard();
 		i = sc.nextInt();
 		processChoice();
-		turn--;
+		turn++;
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Tic Tac Toe!");
 		System.out.println("The player who is X will go first.");
 
-		while (turn <= 9 && turn > 0) {
-			turn();
-			if (turn == 0) {
+		while (turn < Integer.MAX_VALUE) {
+			if ((arr[0][0][0] == "X" || arr[0][0][0] == "O") && (arr[0][0][1] == "X" || arr[0][0][1] == "O")
+					&& (arr[0][0][2] == "X" || arr[0][0][2] == "O") && (arr[1][0][0] == "X" || arr[1][0][0] == "O")
+					&& (arr[1][0][1] == "X" || arr[1][0][1] == "O") && (arr[1][0][2] == "X" || arr[1][0][2] == "O")
+					&& (arr[2][0][0] == "X" || arr[2][0][0] == "O") && (arr[2][0][1] == "X" || arr[2][0][1] == "O")
+					&& (arr[2][0][2] == "X" || arr[2][0][2] == "O")) {
 				printGameBoard();
 				System.out.println("This game is a DRAW!!!");
+				System.exit(1);
 			}
-
+			turn();
 		}
 	}
 }
