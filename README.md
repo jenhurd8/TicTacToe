@@ -7,7 +7,7 @@ Directions to run from git bash or command prompt:
 2) Change directory in terminal to TicTacToe:
    cd TicTacToe
 3) Compile the program by typing:
-   javac TicTacToe.java
+   javac Tic.java
 4) Run the program:
    java Tic
 5) Play the game and enjoy!
