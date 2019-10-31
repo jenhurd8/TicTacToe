@@ -30,7 +30,6 @@ X, please choose a number 1-9 where you would like your choice placed!
   
 
 Once a winner has been determined
----------------------------------
 
   X | X | X
   ----------
@@ -40,3 +39,4 @@ Once a winner has been determined
   ----------
 
 X WINS!!! CONGRATULATIONS!!!
+----------------------------
