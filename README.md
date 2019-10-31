@@ -26,6 +26,7 @@ X, please choose a number 1-9 where you would like your choice placed!
   4 | 5 | 6
   ----------
   7 | 8 | 9
+  
 
 Once a winner has been determined
 ---------------------------------
@@ -35,6 +36,7 @@ Once a winner has been determined
   4 | O | 6
   ----------
   7 | 8 | O
+  
 
 
 X WINS!!! CONGRATULATIONS!!!
